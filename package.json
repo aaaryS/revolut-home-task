@@ -1,0 +1,50 @@
+{
+  "name": "revolut",
+  "private": true,
+  "version": "0.2.0",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "test": "ava -s src/**/*.test.js"
+  },
+  "ava": {
+    "babel": "inherit",
+    "require": [
+      "babel-register",
+      "babel-polyfill"
+    ]
+  },
+  "author": "amaj <maj.aleksander@gmail.com>",
+  "dependencies": {
+    "ava": "^0.20.0",
+    "axios": "^0.16.2",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-stage-1": "^6.24.1",
+    "classnames": "^2.2.5",
+    "history": "^4.7.2",
+    "html-webpack-plugin": "^2.29.0",
+    "immutable": "^3.8.1",
+    "moment": "^2.18.1",
+    "path": "^0.12.7",
+    "prop-types": "^15.5.10",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-redux": "^5.0.5",
+    "react-router-dom": "^4.2.2",
+    "react-router-redux": "next",
+    "redux": "^3.7.1",
+    "redux-actions": "^2.1.0",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.2.0",
+    "reselect": "^3.0.1",
+    "webpack": "^3.5.6",
+    "webpack-dev-server": "^2.7.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1"
+  }
+}
