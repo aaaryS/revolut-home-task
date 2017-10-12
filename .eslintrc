@@ -1,0 +1,167 @@
+
+parser: babel-eslint
+
+env:
+  browser: true
+
+parserOptions:
+  ecmaVersion: 6
+  sourceType: module
+  ecmaFeatures:
+    blockBindings: true
+    jsx: true
+
+extends:
+  - standard
+  - standard-react
+
+settings:
+  import/resolver:
+    webpack:
+      config: 'build/webpack.config.babel.js'
+
+globals:
+  __APP__: false
+  __ENV_DEV__: false
+  __ENV_PROD__: false
+  __ID_FB_CLIENT__: false
+  __ID_FB_PIXEL__: false
+  __ID_GA__: false
+  __ID_GOOGLE_CLIENT__: false
+  __ID_LINKEDIN_CLIENT__: false
+  __ID_SEGMENT__: false
+  __ID_STRIPE__: false
+  __KEY_LAMBDA__: false
+  __OPT_BASENAME__: false
+  __OPT_OFFLINE__: false
+  __OPT_PDF_STYLES__: false
+  __PDF_GENERATOR_URL__: false
+  __SUPPORT_URL__: false
+  __URL_API__: false
+  __URL_APP__: false
+  __URL_MARCIANA__: false
+  fbq: false
+  Stripe: false
+
+rules:
+  arrow-parens: 0
+  block-scoped-var: 2
+  brace-style:
+    - 2
+    - 1tbs
+  comma-dangle: 0
+  comma-style:
+    - 1
+    - last
+  consistent-this:
+    - 2
+    - that
+  curly:
+    - 1
+    - multi-line
+  default-case: 2
+  generator-star-spacing: 0
+  guard-for-in: 2
+  indent:
+    - 2
+    - 2
+    - SwitchCase: 1
+  jsx-quotes:
+    - 1
+    - prefer-single
+  max-len:
+    - 2
+    - 100
+    - 4
+  new-cap: 0
+  no-console: 1
+  no-else-return: 2
+  no-floating-decimal: 2
+  no-lonely-if: 2
+  no-multiple-empty-lines:
+    - 2
+    - max: 1
+  no-param-reassign: 2
+  no-plusplus: 0
+  no-throw-literal: 0
+  no-undefined: 2
+  no-underscore-dangle: 0
+  no-unneeded-ternary: 2
+  no-var: 2
+  no-void: 2
+  one-var:
+    - 2
+    - never
+  prefer-const: 2
+  quotes:
+    - 1
+    - single
+  radix: 0
+  semi:
+    - 1
+    - never
+  space-before-function-paren:
+    - 1
+    - never
+  spaced-comment:
+    - 1
+    - always
+  strict:
+    - 2
+    - global
+  vars-on-top: 2
+  wrap-regex: 1
+
+  babel/arrow-parens: 0
+  babel/new-cap: 0
+
+  react/display-name: 0
+  react/forbid-prop-types: 0
+  react/jsx-boolean-value: 1
+  react/jsx-closing-bracket-location:
+    - 1
+    - selfClosing: tag-aligned
+      nonEmpty: after-props
+  react/jsx-curly-spacing: 1
+  react/jsx-indent-props:
+    - 1
+    - 2
+  react/jsx-max-props-per-line: 0
+  react/jsx-no-bind: 1
+  react/jsx-no-duplicate-props: 1
+  react/jsx-no-literals: 1
+  react/jsx-no-undef: 1
+  react/jsx-sort-props: 0
+  react/jsx-space-before-closing:
+    - 1
+    - never
+  react/jsx-uses-react: 1
+  react/jsx-uses-vars: 1
+  react/no-danger: 1
+  react/no-did-mount-set-state: 0
+  react/no-did-update-set-state: 1
+  react/no-direct-mutation-state: 1
+  react/no-multi-comp: 0
+  react/no-set-state: 0
+  react/no-unknown-property: 1
+  react/no-unused-prop-types: 0
+  react/prefer-es6-class: 1
+  react/prop-types:
+    - 1
+    - ignore:
+      - children
+  react/react-in-jsx-scope: 1
+  react/self-closing-comp: 1
+  react/jsx-wrap-multilines: 1
+  react/sort-comp:
+    - 1
+    - order:
+      - lifecycle
+      - everything-else
+      - /^is.+$/
+      - /^get.+$/
+      - /^set.+$/
+      - /^on.+$/
+      - /^toggle.+$/
+      - /^render.+$/
+      - render
