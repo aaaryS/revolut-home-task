@@ -6,5 +6,5 @@ import currencies from './../utils/currencies'
 const initialState = currencies.reduce((acc, c) => acc.set(c, 100), OrderedMap())
 
 export default handleActions({
-  //place for managing wallet
+  //place for managing wallet operations
 }, initialState)
