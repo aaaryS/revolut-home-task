@@ -1,13 +1,13 @@
 import React, { Component, PropTypes } from 'react'
 import { Link } from 'react-router-dom'
 
-import { ExchangeCurrency } from './../containers'
+import { Exchange } from './../containers'
 
 export default class App extends Component {
   render() {
     return (
      <div>
-       <ExchangeCurrency/>
+       <Exchange/>
      </div>
     )
   }

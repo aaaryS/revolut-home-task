@@ -1,1 +1,1 @@
-export ExchangeCurrency from './ExchangeCurrency'
+export Exchange from './Exchange'
