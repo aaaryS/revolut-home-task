@@ -1,11 +1,14 @@
-import React, { Component } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 
-export default class ExchangeButton extends Component {
-  render() {
-    return (
-     <div>
-       {'ExchangeButton'}
-     </div>
-    )
-  }
+const ExchangeButton = ({ onClick }) => (
+   <button onClick={onClick}>
+     {'ExchangeButton'}
+   </button>
+);
+
+ExchangeButton.propTypes = {
+  onClick: PropTypes.func.isRequired,
 }
+
+export default ExchangeButton
