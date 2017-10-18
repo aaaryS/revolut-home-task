@@ -14,9 +14,15 @@ const fetchAction = async (d) => {
   d(createAction(rc.FETCH_RATES)({rates: result.data.rates}))
 }
 
-export const setFromCurrency = createAction(rc.SET_FROM_CURRENCY)
+export const setFromCurrency = p => async (d, getState) => {
+  await d(createAction(rc.SET_FROM_CURRENCY)(p))
+  d(createAction(rc.SET_FROM_VALUE)({value: getState().rates.fromValue}))
+}
 
-export const setToCurrency = createAction(rc.SET_TO_CURRENCY)
+export const setToCurrency = p => async (d, getState) => {
+  await d(createAction(rc.SET_TO_CURRENCY)(p))
+  d(createAction(rc.SET_TO_VALUE)({value: getState().rates.toValue}))
+}
 
 export const setFromValue = createAction(rc.SET_FROM_VALUE)
 

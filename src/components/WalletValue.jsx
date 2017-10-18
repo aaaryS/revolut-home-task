@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 const WalletValue = ({ value, currency }) => (
   <div>
-    {`${value} ${currency}`}
+    {`You have: ${value} ${currency}`}
   </div>
 )
 

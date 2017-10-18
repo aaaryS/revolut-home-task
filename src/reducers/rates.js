@@ -4,6 +4,7 @@ import { OrderedMap, Record } from 'immutable'
 import rc from '../constants/rates-constants'
 
 import currencies from './../utils/currencies'
+import exchange from './../utils/exchange'
 
 const RatesRecord = Record({
   from: 'USD',
@@ -14,8 +15,8 @@ const RatesRecord = Record({
   values: currencies.reduce((acc, c) => acc.set(c, null), OrderedMap())
 })
 
-const getRateFrom = ({values, to, from}) => (values.get(to) / values.get(from)).toFixed(3)
-const getRateTo = ({values, to, from}) => (values.get(from) / values.get(to)).toFixed(3)
+// const getRateFrom = ({values, to, from}) => (values.get(to) / values.get(from)).toFixed(3)
+// const getRateTo = ({values, to, from}) => (values.get(from) / values.get(to)).toFixed(3)
 
 const initialState = RatesRecord()
 
@@ -34,10 +35,10 @@ export default handleActions({
   }),
   [rc.SET_TO_VALUE]: (s, a) => s.merge({
     'toValue': a.payload.value,
-    'fromValue': a.payload.value * getRateTo(s)
+    'fromValue': exchange(s.to, s.from, a.payload.value, s.values),
   }),
   [rc.SET_FROM_VALUE]: (s, a) => s.merge({
     'fromValue': a.payload.value,
-    'toValue': a.payload.value * getRateFrom(s),
+    'toValue': exchange(s.from, s.to, a.payload.value, s.values),
   }),
 }, initialState)

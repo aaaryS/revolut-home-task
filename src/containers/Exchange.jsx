@@ -45,6 +45,7 @@ export default class Exchange extends Component {
           onValueChange={this.onFromValueChange}
           value={rates.fromValue}
           walletValue={wallet.get(rates.from)}
+          symbol='-'
         />
         <ExchangeRate
           from={rates.from}
@@ -57,6 +58,7 @@ export default class Exchange extends Component {
           onValueChange={this.onToValueChange}
           value={rates.toValue}
           walletValue={wallet.get(rates.to)}
+          symbol='+'
         />
         <ExchangeButton onClick={this.onExchange}/>
       </div>

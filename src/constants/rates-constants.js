@@ -1,7 +1,10 @@
 export default {
+  // action types
   'FETCH_RATES': 'FETCH_RATES',
   'SET_FROM_CURRENCY': 'SET_FROM_CURRENCY',
   'SET_TO_CURRENCY': 'SET_TO_CURRENCY',
   'SET_FROM_VALUE': 'SET_FROM_VALUE',
   'SET_TO_VALUE': 'SET_TO_VALUE',
+  // app constants
+  'CURRENCY_PRECISION': 2,
 }
