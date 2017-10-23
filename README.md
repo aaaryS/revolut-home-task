@@ -1,3 +1,16 @@
+## Install & run project
+
+```
+yarn install
+npm start
+```
+
+For running tests:
+```
+npm run:test
+```
+
+
 # Web Development Home Task
 
 * Open the current Revolut app, on either iOS or Android, and navigate to the exchange screen.
