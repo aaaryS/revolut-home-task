@@ -1,6 +1,6 @@
 import c from './../constants/rates-constants'
 
-const getRate = (from, to, rates) => (
+export const getRate = (from, to, rates) => (
   (rates.get(to) / rates.get(from)).toFixed(c.CURRENCY_PRECISION)
 )
 
