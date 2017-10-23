@@ -1,5 +1,5 @@
 import { handleActions } from 'redux-actions'
-import { OrderedMap, Record } from 'immutable'
+import { OrderedMap } from 'immutable'
 
 import rc from '../constants/rates-constants'
 

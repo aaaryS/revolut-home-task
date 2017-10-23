@@ -1,5 +1,5 @@
 import test from 'ava'
-import { OrderedMap, Record } from 'immutable'
+import { OrderedMap } from 'immutable'
 
 import rc from './../../constants/rates-constants'
 import RatesRecord from './../../models/rates-model'
