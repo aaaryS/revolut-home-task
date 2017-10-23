@@ -1,8 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import './WalletValue.scss'
+
 const WalletValue = ({ value, currency }) => (
-  <div>
+  <div className='wallet-value'>
     {`You have: ${value} ${currency}`}
   </div>
 )

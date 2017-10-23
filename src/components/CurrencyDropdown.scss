@@ -1,0 +1,22 @@
+@import './../styles/variables';
+
+.currency-dropdown {
+  position: relative;
+  &:after {
+    content: '▼';
+    position: absolute;
+    right: 0;
+    font-size: 12px;
+    top: 11px;
+  }
+}
+
+.currency-dropdown select{
+  background: transparent;
+  border: none;
+  font-size: $input-font-size;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding-right: 15px;
+}

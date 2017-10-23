@@ -9,8 +9,8 @@ import exchange from './../utils/exchange'
 const RatesRecord = Record({
   from: 'USD',
   to: 'EUR',
-  fromValue: 0,
-  toValue: 0,
+  fromValue: '',
+  toValue: '',
   base: 'USD',
   values: currencies.reduce((acc, c) => acc.set(c, null), OrderedMap())
 })

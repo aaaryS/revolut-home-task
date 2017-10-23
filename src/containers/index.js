@@ -1,1 +1,1 @@
-export Exchange from './Exchange'
+export ExchangeContainer from './ExchangeContainer'

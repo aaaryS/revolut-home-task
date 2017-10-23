@@ -1,0 +1,18 @@
+.exchange-button {
+  width: 300px;
+  border-radius: 20px;
+  border: none;
+  background: #ff62f7;
+  color: white;
+  height: 40px;
+  margin: 0 auto;
+  cursor: pointer;
+
+  &:hover {
+    opacity: .9;
+  }
+
+  &:disabled {
+    opacity: .4;
+  }
+}

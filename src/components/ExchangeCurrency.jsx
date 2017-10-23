@@ -5,12 +5,16 @@ import CurrencyDropdown from './CurrencyDropdown'
 import CurrencyRate from './CurrencyRate'
 import WalletValue from './WalletValue'
 
+import './ExchangeCurrency.scss'
+
 const ExchangeCurrency = ({ currency, onCurrencyChange, onValueChange, value, walletValue, symbol }) => (
-   <div>
-     <CurrencyDropdown onChange={onCurrencyChange} currency={currency} />
-     <CurrencyRate value={value} onChange={onValueChange} symbol={symbol}/>
-     <WalletValue value={walletValue} currency={currency}/>
-   </div>
+  <div className='exchange-currency'>
+    <div className='exchange-currency__rate'>
+      <CurrencyDropdown onChange={onCurrencyChange} currency={currency} />
+      <CurrencyRate value={value} onChange={onValueChange} symbol={symbol}/>
+    </div>
+    <WalletValue value={walletValue} currency={currency}/>
+  </div>
 );
 
 ExchangeCurrency.propTypes = {

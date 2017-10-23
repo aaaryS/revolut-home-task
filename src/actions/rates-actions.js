@@ -4,7 +4,7 @@ import axios from 'axios'
 import rc from '../constants/rates-constants'
 import config from '../config'
 
-export const fetch = (p = {}) => (d) => {
+export const fetch = () => (d) => {
   fetchAction(d)
   setInterval(() => fetchAction(d), config.fetchTimeout)
 }

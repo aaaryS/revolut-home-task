@@ -3,14 +3,14 @@ import PropTypes from 'prop-types'
 
 const ExchangeRate = ({ from, to, rate }) => (
   <div>
-    {`${from} - ${rate} ${to}`}
+    {`1.00${from} - ${rate} ${to}`}
   </div>
 )
 
 ExchangeRate.propTypes = {
   from: PropTypes.string.isRequired,
   to: PropTypes.string.isRequired,
-  value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
+  rate: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
 }
 
 export default ExchangeRate
