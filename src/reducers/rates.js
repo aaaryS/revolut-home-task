@@ -5,18 +5,7 @@ import rc from '../constants/rates-constants'
 
 import currencies from './../utils/currencies'
 import exchange from './../utils/exchange'
-
-const RatesRecord = Record({
-  from: 'USD',
-  to: 'EUR',
-  fromValue: '',
-  toValue: '',
-  base: 'USD',
-  values: currencies.reduce((acc, c) => acc.set(c, null), OrderedMap())
-})
-
-// const getRateFrom = ({values, to, from}) => (values.get(to) / values.get(from)).toFixed(3)
-// const getRateTo = ({values, to, from}) => (values.get(from) / values.get(to)).toFixed(3)
+import RatesRecord from './../models/rates-model'
 
 const initialState = RatesRecord()
 
