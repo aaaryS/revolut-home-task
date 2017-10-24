@@ -6,6 +6,7 @@ import { bindActionCreators } from 'redux'
 import { ExchangeCurrency, ExchangeRate, ExchangeButton } from './../components'
 
 import { getExchangeRate, isValidRate } from './../selectors/rates-selectors'
+import { walletFromValue, walletToValue } from './../selectors/wallet-selectors'
 
 import * as ratesActions from './../actions/rates-actions'
 
@@ -13,7 +14,8 @@ import './ExchangeContainer.scss'
 
 @connect((s, p) => ({
   rates: s.rates,
-  wallet: s.wallet,
+  walletFromValue: walletFromValue(s),
+  walletToValue: walletToValue(s),
   exchangeRate: getExchangeRate(s),
   isValidRate: isValidRate(s)
 }),
@@ -23,9 +25,11 @@ d => ({
 
 export default class ExchangeContainer extends Component {
   static propTypes = {
-    rates: PropTypes.object,
     exchangeRate: PropTypes.string,
     isValidRate: PropTypes.bool,
+    rates: PropTypes.object,
+    walletFromValue: PropTypes.number,
+    walletToValue: PropTypes.number,
   }
 
   componentDidMount() {
@@ -39,7 +43,7 @@ export default class ExchangeContainer extends Component {
   onExchange = () => alert('exchange')
 
   render() {
-    const { rates, wallet, exchangeRate, isValidRate } = this.props
+    const { rates, exchangeRate, isValidRate, walletToValue, walletFromValue } = this.props
     return (
       <div className='exchange'>
         <div className='exchange__currency exchange__currency--from'>
@@ -48,7 +52,7 @@ export default class ExchangeContainer extends Component {
             onCurrencyChange={this.onFromCurrencyChange}
             onValueChange={this.onFromValueChange}
             value={rates.fromValue}
-            walletValue={wallet.get(rates.from)}
+            walletValue={walletFromValue}
             symbol='-'
           />
         </div>
@@ -65,7 +69,7 @@ export default class ExchangeContainer extends Component {
             onCurrencyChange={this.onToCurrencyChange}
             onValueChange={this.onToValueChange}
             value={rates.toValue}
-            walletValue={wallet.get(rates.to)}
+            walletValue={walletToValue}
             symbol='+'
           />
         </div>
