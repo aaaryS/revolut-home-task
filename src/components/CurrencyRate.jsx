@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
+import { filterCurrencyValue } from './../utils/helpers'
+
 import './CurrencyRate.scss'
 
-const onParse = onChange => e => onChange(e.target.value.replace(/[+-]/, ''))
+const onParse = onChange => e => onChange(filterCurrencyValue(e.target.value))
 
 const getValue = (v, s) => `${v > 0  ? s : ''}${v}`
 
