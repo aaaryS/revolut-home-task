@@ -23,7 +23,7 @@ ExchangeCurrency.propTypes = {
   onCurrencyChange: PropTypes.func.isRequired,
   onValueChange: PropTypes.func.isRequired,
   value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
-  walletValue: PropTypes.number.isRequired,
+  walletValue: PropTypes.string.isRequired,
 }
 
 export default ExchangeCurrency

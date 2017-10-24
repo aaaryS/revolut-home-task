@@ -9,6 +9,7 @@ import { getExchangeRate, isValidRate } from './../selectors/rates-selectors'
 import { walletFromValue, walletToValue } from './../selectors/wallet-selectors'
 
 import * as ratesActions from './../actions/rates-actions'
+import * as walletActions from './../actions/wallet-actions'
 
 import './ExchangeContainer.scss'
 
@@ -21,6 +22,7 @@ import './ExchangeContainer.scss'
 }),
 d => ({
   ratesActions: bindActionCreators(ratesActions, d),
+  walletActions: bindActionCreators(walletActions, d),
 }))
 
 export default class ExchangeContainer extends Component {
@@ -28,8 +30,10 @@ export default class ExchangeContainer extends Component {
     exchangeRate: PropTypes.string,
     isValidRate: PropTypes.bool,
     rates: PropTypes.object,
-    walletFromValue: PropTypes.number,
-    walletToValue: PropTypes.number,
+    ratesActions: PropTypes.object,
+    walletActions: PropTypes.object,
+    walletFromValue: PropTypes.string,
+    walletToValue: PropTypes.string,
   }
 
   componentDidMount() {
@@ -40,7 +44,7 @@ export default class ExchangeContainer extends Component {
   onFromValueChange = (value, p = this.props) => p.ratesActions.setFromValue({value})
   onToCurrencyChange = (e, p = this.props) => p.ratesActions.setToCurrency({currency: e.target.value})
   onToValueChange = (value, p = this.props) => p.ratesActions.setToValue({value})
-  onExchange = () => alert('exchange')
+  onExchange = (p = this.props) => () => p.walletActions.exchange()
 
   render() {
     const { rates, exchangeRate, isValidRate, walletToValue, walletFromValue } = this.props
@@ -74,7 +78,7 @@ export default class ExchangeContainer extends Component {
           />
         </div>
         <div className='exchange__button'>
-          <ExchangeButton onClick={this.onExchange} disabled={!isValidRate}/>
+          <ExchangeButton onClick={this.onExchange()} disabled={!isValidRate}/>
         </div>
       </div>
     )

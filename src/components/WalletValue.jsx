@@ -11,7 +11,7 @@ const WalletValue = ({ value, currency }) => (
 
 WalletValue.propTypes = {
   currency: PropTypes.string.isRequired,
-  value: PropTypes.number.isRequired,
+  value: PropTypes.string.isRequired,
 }
 
 export default WalletValue
