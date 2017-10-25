@@ -3,8 +3,10 @@ import PropTypes from 'prop-types'
 
 import { getSymbol } from './../utils/currencies'
 
+import './ExchangeRate.scss'
+
 const ExchangeRate = ({ from, to, rate }) => (
-  <div>
+  <div className='exchange-rate'>
     {`1.00 ${getSymbol(from)} - ${rate} ${getSymbol(to)}`}
   </div>
 )
