@@ -60,13 +60,11 @@ export default class ExchangeContainer extends Component {
             symbol='-'
           />
         </div>
-        <div className='exchange__rate'>
-          <ExchangeRate
-            from={rates.from}
-            rate={exchangeRate}
-            to={rates.to}
-          />
-        </div>
+        <ExchangeRate
+          from={rates.from}
+          rate={exchangeRate}
+          to={rates.to}
+        />
         <div className='exchange__currency exchange__currency--to'>
           <ExchangeCurrency
             currency={rates.to}
